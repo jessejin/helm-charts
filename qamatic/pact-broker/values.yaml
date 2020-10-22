@@ -45,10 +45,7 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: pact-broker.local
-      paths: []
-
+  hostname: pact-broker.local
   tls: []
   #  - secretName: pact-broker-tls
   #    hosts:
