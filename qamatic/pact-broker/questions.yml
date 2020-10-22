@@ -1,0 +1,21 @@
+labels:
+  io.cattle.role: cluster # options are cluster/project
+  io.rancher.app_min_version: 7.3.8
+categories:
+- Blog
+- CMS
+questions:
+- variable: ingress.enabled
+  default: true
+  description: "Expose app using Layer 7 Load Balancer - ingress"
+  type: boolean
+  label: Expose app using Layer 7 Load Balancer
+  show_subquestion_if: true
+  group: "Services and Load Balancing"
+  subquestions:
+  - variable: ingress.hostname
+    default: "xip.io"
+    description: "Hostname to your WordPress installation"
+    type: hostname
+    required: true
+    label: Hostname
