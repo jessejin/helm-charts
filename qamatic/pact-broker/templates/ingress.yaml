@@ -27,7 +27,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: {{ template "pact-broker.fullname" . }}
+              serviceName: {{ .Values.service.name }}
               servicePort: http
   {{- end }}
     
