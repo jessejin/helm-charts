@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   pactImageRepository: pactfoundation/pact-broker
-  pactImageTag: 2.32.0-2
+  pactImageTag: 2.67.0.0
   pullPolicy: IfNotPresent
 
 service:
@@ -18,19 +18,20 @@ pact:
   port: 9292    
 
 postgresql:
-
   ## Use the PostgreSQL chart dependency.
   ## Set to false if bringing your own PostgreSQL.
   ##
   enabled: true
-  postgresUser: pactbroker
-  postgresPassword: pactbroker
-  postgresDatabase: pactbroker
+  postgresqlUsername: pactbroker
+  postgresqlPassword: pactbroker
+  postgresqlDatabase: pactbroker
 
   persistence:
     ## Enable PostgreSQL persistence using Persistent Volume Claims.
     ##
     enabled: true
+    size: 8Gi
+    storageClass: longhorn
 
 persistence:
   enabled: true
